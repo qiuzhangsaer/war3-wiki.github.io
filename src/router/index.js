@@ -3,19 +3,19 @@ import {createRouter, createWebHashHistory} from 'vue-router';
 export const manageRoutes = [{
     name: 'Index',
     path: '/index',
-    component: () => import('../views/Index.vue'),
-    meta: {title: '首页',class:'hidden'}
+    component: () => import('@/views/Index.vue'),
+    meta: {title: '首页'}
 }];
 export const defaultRoutes = [{
     path: '/',
     name: 'Index',
-    component: () => import('../views/Layout.vue'),
+    component: () => import('@/views/Layout.vue'),
     redirect: '/index',
     children: [...manageRoutes, {
         path: '/404',
         name: '404',
         meta: {title: '找不到页面'},
-        component: () => import('../views/404.vue')
+        component: () => import('@/views/404.vue')
     }]
 }, {
     path: '/:pathMatch(.*)',

@@ -4,7 +4,6 @@ import router from './router';
 import TDesign from 'tdesign-vue-next';
 import {createPinia} from 'pinia';
 
-console.log(envv)
 const app = createApp(App);
 app.use(createPinia());
 app.use(router);

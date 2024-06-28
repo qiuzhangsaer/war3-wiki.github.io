@@ -14,6 +14,7 @@ export default defineConfig({
     }
   },
   define: {
-    'envv': process.env,
+    'E_TITLE': process.env.title,
+    'E_EMAIL': process.env.email,
   },
 })

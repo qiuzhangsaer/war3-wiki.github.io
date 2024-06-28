@@ -5,6 +5,9 @@ import {useRoute, useRouter} from 'vue-router';
 const route = useRoute();
 const router = useRouter();
 
+const title = E_TITLE  || '';
+const email = E_EMAIL  || '';
+
 
 const goPath = (item) => {
   router.push({
@@ -17,7 +20,7 @@ const goPath = (item) => {
   <t-layout>
     <t-header>
       <div class="jumbotron jumbotron-fluid text-center">
-        <h1 class="display-4">War3维基</h1>
+        <h1 class="display-4">{{ title }}</h1>
         <p class="lead">欢迎来到War3维基，这里是魔兽争霸3游戏地图的知识库和资源中心。</p>
       </div>
     </t-header>
@@ -29,7 +32,7 @@ const goPath = (item) => {
         <div class="footer-content">
           <div class="footer-column">
             <h5>联系方式</h5>
-            <p>Email: <a href="mailto:admin@xvkes.cn" class="text-light">admin@xvkes.cn</a></p>
+            <p>Email: <a href="mailto:{{ email }}" class="text-light">{{ email }}</a></p>
           </div>
           <div class="footer-column">
             <h5>关于我们</h5>
@@ -39,7 +42,7 @@ const goPath = (item) => {
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2023 War3维基. All Rights Reserved.</p>
+          <p>© 2023 {{ title }}. All Rights Reserved.</p>
         </div>
       </div>
     </t-footer>
