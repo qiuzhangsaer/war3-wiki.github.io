@@ -1,16 +1,16 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
 
 export const manageRoutes = [{
-    name: 'Index',
-    path: '/index',
-    component: () => import('@/views/Index.vue'),
+    name: 'Home',
+    path: '/home',
+    component: () => import('@/views/Home.vue'),
     meta: {title: '首页'}
 }];
 export const defaultRoutes = [{
     path: '/',
-    name: 'Index',
+    name: 'Home',
     component: () => import('@/views/Layout.vue'),
-    redirect: '/index',
+    redirect: '/home',
     children: [...manageRoutes, {
         path: '/404',
         name: '404',
