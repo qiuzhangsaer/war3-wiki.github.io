@@ -1,8 +1,6 @@
 <script setup>
-import {manageRoutes} from "../router";
-import {useRoute, useRouter} from 'vue-router';
+import {useRouter} from 'vue-router';
 
-const route = useRoute();
 const router = useRouter();
 
 const title = E_TITLE  || '';

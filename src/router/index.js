@@ -8,13 +8,12 @@ export const manageRoutes = [{
 }];
 export const defaultRoutes = [{
     path: '/',
-    name: 'Home',
     component: () => import('@/views/Layout.vue'),
     redirect: '/home',
     children: [...manageRoutes, {
         path: '/404',
         name: '404',
-        meta: {title: '找不到页面'},
+        meta: { title: '找不到页面' },
         component: () => import('@/views/404.vue')
     }]
 }, {
