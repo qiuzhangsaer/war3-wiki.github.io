@@ -1,5 +1,3 @@
-import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from "path";
@@ -15,7 +13,7 @@ export default defineConfig({
     }
   },
   define: {
-    'E_TITLE': process.env.title,
-    'E_EMAIL': process.env.email,
+    'E_TITLE': process.env.title || '',
+    'E_EMAIL': process.env.email || '',
   },
 })
