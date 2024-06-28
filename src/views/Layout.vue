@@ -3,8 +3,8 @@ import {useRouter} from 'vue-router';
 
 const router = useRouter();
 
-const title = E_TITLE.toString();
-const email = E_EMAIL.toString();
+const title = E_TITLE  || '';
+const email = E_EMAIL  || '';
 
 
 const goPath = (item) => {
