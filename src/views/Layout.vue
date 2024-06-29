@@ -12,10 +12,6 @@ const goPath = (item) => {
     path: item.path
   });
 }
-
-onMounted(() => {
-  console.log(DB);
-});
 </script>
 
 <template>
