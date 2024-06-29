@@ -14,12 +14,7 @@ const goPath = (item) => {
 }
 
 onMounted(() => {
-  const { results } = DB.prepare(
-      "SELECT * FROM category WHERE name = ?"
-  )
-      .bind("Bs Beverages")
-      .all();
-  console.log(results);
+  console.log(DB);
 });
 </script>
 
