@@ -13,6 +13,7 @@ export default defineConfig({
     }
   },
   define: {
+    'EENV': process.env,
     'E_TITLE': process.env.title,
     'E_EMAIL': process.env.email,
   },
