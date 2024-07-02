@@ -1,126 +1,70 @@
 <script setup>
-import {useRouter} from 'vue-router';
 import {onMounted} from "vue";
 
-const router = useRouter();
-
-const title = E_TITLE  || '';
-const email = E_EMAIL  || '';
-
-const goPath = (item) => {
-  router.push({
-    path: item.path
-  });
-}
+const title = E_ENV.title  || '';
+const intro = E_ENV.intro  || '';
+const email = E_ENV.email  || '';
 </script>
 
 <template>
   <t-layout>
     <t-header height="auto">
-      <div>
-        <t-image
-            fit="cover"
-            position="top"
-            src="/images/background.jpg"
-            :style="{ height: '300px' }"
-        />
+      <div class="h-title">
+        <h1>{{ title }}</h1>
+        <p>{{ intro }}</p>
       </div>
-<!--      <div class="jumbotron jumbotron-fluid text-center">-->
-<!--        <h1 class="display-4">{{ title }}</h1>-->
-<!--        <p class="lead">欢迎来到War3维基，这里是魔兽争霸3游戏地图的知识库和资源中心。</p>-->
-<!--      </div>-->
     </t-header>
     <t-content>
       <router-view :key="$route.path"/>
     </t-content>
     <t-footer>
-      66
-<!--      <div class="">-->
-<!--        <div class="footer-content">-->
-<!--          <div class="footer-column">-->
-<!--            <h5>联系方式</h5>-->
-<!--            <p>Email: <a href="mailto:{{ email }}" class="text-light">{{ email }}</a></p>-->
-<!--          </div>-->
-<!--          <div class="footer-column">-->
-<!--            <h5>关于我们</h5>-->
-<!--            <ul class="list-unstyled">-->
-<!--              <li><a href="#" class="text-light">首页</a></li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="footer-bottom">-->
-<!--          <p>© 2023 {{ title }}. All Rights Reserved.</p>-->
-<!--        </div>-->
-<!--      </div>-->
+      <t-row justify="space-between">
+        <t-col :xs="12" :sm="12" :md="12" :lg="6" :xl="6">
+          <div class="footer-item">
+            <h2>联系方式</h2>
+            <div>
+              <t-link hover="color" :href="`mailto:${email}`"><h3>{{ email }}</h3></t-link>
+            </div>
+          </div>
+        </t-col>
+        <t-col :xs="12" :sm="12" :md="12" :lg="6" :xl="6">
+          <div class="footer-item">
+            <h2>关于我们</h2>
+            <div>
+              <t-link hover="color" href="/"><h3>首页</h3></t-link>
+            </div>
+          </div>
+        </t-col>
+      </t-row>
+      <div class="footer-item">Copyright @ 2023-{{ new Date().getFullYear() }} {{ title }}. All Rights Reserved</div>
     </t-footer>
   </t-layout>
 </template>
 
 <style lang="less" scoped>
-.jumbotron {
-  background-image: url('/images/background.jpg');
-  background-size: cover;
+.h-title{
   height: 300px;
-}
-.jumbotron h1, .jumbotron p {
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.card {
-  border: none;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card-title {
-  font-weight: bold;
-}
-
-.footer-container {
-  background-color: #343a40;
+  display: grid;
+  align-content: center;
   color: #ffffff;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.footer-column {
-  flex-basis: 33%;
-  padding-right: 30px;
-}
-
-.footer-column:last-child {
-  padding-right: 0;
-}
-
-.footer-column h5 {
-  margin-bottom: 15px;
-}
-
-.footer-column p {
-  margin-bottom: 10px;
-}
-
-.footer-column ul {
-  padding-left: 0;
-  list-style: none;
-}
-
-.footer-column ul li {
-  margin-bottom: 5px;
-}
-
-.footer-bottom {
   text-align: center;
-  margin-top: 20px;
+  background-size: cover;
+  background-image: url("/images/background.jpg");
+  text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  h1{
+    font-size: 50px;
+    font-weight: 300;
+  }
+  p{
+    font-size: 20px;
+    padding-top: 30px;
+  }
+}
+.footer-item {
+  text-align: center;
+  div {
+    margin: 10px 0;
+  }
 }
 </style>
