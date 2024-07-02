@@ -26,7 +26,7 @@ const goPath = (item) => {
 <template>
   <div style="padding:10px">
     <t-row :gutter="[16, 16]">
-      <t-col v-for="item in data" :xs="12" :sm="12" :md="12" :lg="6" :xl="4" :key="item.id">
+      <t-col v-for="item in data" :xs="12" :sm="6" :md="6" :lg="4" :key="item.id">
         <t-card class="dashboard-item" @click="goPath(item.id)" :title="item.name" :bordered="false" :hover-shadow="true">
           {{ item.intro }}
           <!--          <template #actions>-->
